@@ -1,0 +1,15 @@
+Wed Mar 24 13:58:49 UTC 2021: 
+ list.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+In file included from test.c:5:0:
+list.c: In function ‘createList’:
+list.c:32:21: error: expected expression before ‘)’ token
+   List *list=(list *) malloc(sizeof(list));
+                     ^
+Compilation failed
+Wed Mar 24 13:59:22 UTC 2021: 
+ list.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+ tests:  1|5
+total_score: 10/70
+66cfdcb
