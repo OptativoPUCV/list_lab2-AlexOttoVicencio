@@ -40,7 +40,7 @@ void * firstList(List * list) {
   //retorna y mueve la lista a su primer valor
   if(list->head!=NULL && list->head->data){
     list->current=list->head;
-    printf("vale %p",list->current->data);
+    printf("vale %p",list->current->next);
     return NULL;
     
   }else{
