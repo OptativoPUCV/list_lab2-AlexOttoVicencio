@@ -37,7 +37,15 @@ List * createList() {
 }
 
 void * firstList(List * list) {
-    return NULL;
+  //retorna y mueve la lista a su primer valor
+  if(list->head && list->head->data){
+    list->current=list->head;
+    if(list->head->data!=NULL){
+      printf("si existe \n");
+    }
+    return list->head;
+  }else{
+    return NULL;}
 }
 
 void * nextList(List * list) {
