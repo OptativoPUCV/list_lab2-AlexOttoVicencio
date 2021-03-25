@@ -40,14 +40,18 @@ void * firstList(List * list) {
   //retorna y mueve la lista a su primer valor
   if(list->head!=NULL && list->head->data){
     list->current=list->head;
-    printf("vale %p",list->current);
-    return NULL;
+    
+    return (void *)list->current->data;
     
   }else{
     return NULL;}
 }
 
 void * nextList(List * list) {
+   if (list->current && list->current->next!=NULL){
+     list->current=list->current->next;
+     return (void *)list->current->data;
+   }
     return NULL;
 }
 
