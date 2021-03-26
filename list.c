@@ -49,7 +49,7 @@ void * firstList(List * list) {
 
 void * nextList(List * list) {
   //se confirma que no sea null el sig valor
-   if ( list->current->next!=NULL){
+   if (list->current && list->current->next!=NULL){
      list->current=list->current->next;
      return (void *)list->current->data;
    }
