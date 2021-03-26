@@ -48,6 +48,7 @@ void * firstList(List * list) {
 }
 
 void * nextList(List * list) {
+  //se confirma que no sea null el sig valor
    if (list->current && list->current->next!=NULL){
      list->current=list->current->next;
      return (void *)list->current->data;
@@ -59,11 +60,12 @@ void * lastList(List * list) {
   if(list->tail && list->tail->data){
     list->current=list->tail;
     return (void *)list->current->data;
-  }else{
-    return NULL;}
+  }
+    return NULL;
 }
 
 void * prevList(List * list) {
+
     return NULL;
 }
 
