@@ -43,8 +43,8 @@ void * firstList(List * list) {
     
     return (void *)list->current->data;
     
-  }else{
-    return NULL;}
+  }
+  return NULL;
 }
 
 void * nextList(List * list) {
