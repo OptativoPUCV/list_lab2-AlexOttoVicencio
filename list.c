@@ -74,20 +74,13 @@ void * prevList(List * list) {
 
 void pushFront(List * list, const void * data) {
   
-  if(list->head==NULL){
-    Node *n=createNode(data);
-    list->tail=n;
-    list->head=n;
-    printf("si pasa\n");
-  }else{
-    Node *n=createNode(data);
+  Node *n = createNode(data);
+  n->next=list->head;
+  list->head->prev=n;
+  if(list->head){
     list->head->prev=n;
     list->head=n;
-    
-       
-    
   }
-  
 }
 
 void pushBack(List * list, const void * data) {
