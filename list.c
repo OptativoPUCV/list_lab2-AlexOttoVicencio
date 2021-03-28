@@ -73,12 +73,10 @@ void * prevList(List * list) {
 }
 
 void pushFront(List * list, const void * data) {
-  
   Node *n = createNode(data);
  if(list->head==NULL){
-   
-   list->head=n;
-   list->tail=n;
+    list->head=n;
+    list->tail=n;
  }else{
    n->next=list->head;
    list->head=n;
@@ -91,7 +89,28 @@ void pushBack(List * list, const void * data) {
 }
 
 void pushCurrent(List * list, const void * data) {
-  
+ Node *n= createNode(data);
+ 
+ //si la list esta vacia
+  if(list->head==NULL){
+      list->head=n;
+      list->tail=n;
+  }
+  //si la list esta en el ultimo
+  if(list->current==list->tail){
+    list->tail->next=n;
+    n=list->tail;
+  }
+  //si esta entre dos nodos
+  if(list->current!=list->tail){
+     n->next=list->current->next;
+     n->prev=list->current;
+     list->current->next=n;
+     nextList(list);
+     
+  }
+
+
 }
 
 void * popFront(List * list) {
