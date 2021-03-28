@@ -95,17 +95,14 @@ void pushCurrent(List * list, const void * data) {
   if(list->head==NULL){
       list->head=n;
       list->tail=n;
-  }
-  //si la list esta en el ultimo
-  if(list->current==list->tail){
-    list->tail->next=n;
-    n=list->tail;
-  }
-  //si esta entre dos nodos
-  if(list->current!=list->tail){
+  }else{
      n->prev=list->current;
-     list->current->next=n;
-     list->current->prev=n;
+     if(list->current==list->tail){
+     list->current=n;
+     }else{
+       n->next=list->current->next->prev;
+     }
+     
   }
 
 
