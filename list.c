@@ -90,12 +90,7 @@ void pushBack(List * list, const void * data) {
 
 void pushCurrent(List * list, const void * data) {
  Node *n= createNode(data);
- 
- //si la list esta vacia
-  if(list->head==NULL){
-      list->head=n;
-      list->tail=n;
-  }else{
+
      n->prev=list->current;
      if(list->current==list->tail){
      list->current=n;
@@ -107,7 +102,7 @@ void pushCurrent(List * list, const void * data) {
   }
 
 
-}
+
 
 void * popFront(List * list) {
     list->current = list->head;
