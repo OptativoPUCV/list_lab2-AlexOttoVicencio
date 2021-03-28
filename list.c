@@ -94,7 +94,7 @@ void pushCurrent(List * list, const void * data) {
      n->prev=list->current;
      if(list->current==list->tail){
      list->current->next=n;
-     
+     list->tail=n;
      }else{
        n->next=list->current->next;
        list->current->next->prev=n;
