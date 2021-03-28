@@ -103,11 +103,8 @@ void pushCurrent(List * list, const void * data) {
   }
   //si esta entre dos nodos
   if(list->current!=list->tail){
-     n->next=list->current->next;
      n->prev=list->current;
      list->current->next=n;
-     nextList(list);
-     nextList(list);
      list->current->prev=n;
   }
 
