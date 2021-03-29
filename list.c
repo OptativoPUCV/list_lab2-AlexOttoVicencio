@@ -120,10 +120,11 @@ void * popCurrent(List * list) {
  Node *aux=createNode(NULL);
   if(list->current==list->head){
       aux=list->head;
+      printf("aux valor %p",(void *)aux->data);
       list->head=list->head->next;
       free(list->head->prev);
       list->head->prev=NULL;
-      printf("aux valor %p",(void *)aux->data);
+      
       return (void *)aux->data;
   }
   if(list->current==list->tail){
