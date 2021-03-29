@@ -124,7 +124,7 @@ void * popCurrent(List * list) {
       list->head=list->head->next;
       list->head->prev=NULL;
       free(aux);
-      printf("el val vale %p",(void*)list->current->data);
+      printf("el val vale %p",(void*)val);
       return (void *)val;
   }
   if(list->current==list->tail){
