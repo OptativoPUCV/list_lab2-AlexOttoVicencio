@@ -123,7 +123,7 @@ void * popCurrent(List * list) {
       list->head=list->head->next;
       free(list->head->prev);
       list->head->prev=NULL;
-      printf("el val vale %p",val);
+      printf("el val vale %p",(void *)val);
       return (void *)val;
   }
   if(list->current==list->tail){
