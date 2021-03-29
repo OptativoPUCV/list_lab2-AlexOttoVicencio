@@ -117,19 +117,17 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
- Node *aux=createNode((void*)list->current->data); 
-  const void *val=list->current->data;
+ Node *aux;
   if(list->current==list->head){
       aux=list->head;
       list->head=list->head->next;
-      list->head->prev=NULL;
-      free(aux);
-      printf("val es %p",val);
-      return (void *)val;
+      free(list->head->prev);
+      return (void *)aux->data;
   }
   if(list->current==list->tail){
-      list->current=list->tail->prev;
+      aux=list->tail;
 
+      
   }
     return NULL;
 }
