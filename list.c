@@ -117,6 +117,18 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
+ // Node *temp=createNode((void*)list->current->data); 
+  const void *val=(void *)list->current->data;
+  if(list->current==list->head){
+      list->head=list->head->next;
+      free(list->head->prev);
+      list->head->prev=NULL;
+      return (void *)val;
+  }
+  if(list->current==list->tail){
+      list->current=list->tail->prev;
+
+  }
     return NULL;
 }
 
