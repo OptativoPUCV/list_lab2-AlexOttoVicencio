@@ -118,8 +118,13 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list) {
 const void *valor=list->current->data;
-printf("vale %p",valor);
+  //si el current es head
+  if(list->current==list->head){
+    list->head=list->head->next;
+    free(list->head->prev);
     return (void *)valor;
+}
+return NULL;
 }
 
 void cleanList(List * list) {
