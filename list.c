@@ -127,6 +127,7 @@ int flag=0;
     list->head=list->head->next;
     free(list->head->prev);
     list->head->prev=NULL;
+    list->current=list->head;
     return (void *)valor;
 }
   //si el current es tail
@@ -135,7 +136,7 @@ int flag=0;
     list->tail=list->tail->prev;
     free(list->head->next);
     list->tail->next=NULL;
-    
+    list->current=list->head;
     return (void *)valor;
   }
   //si el current se encuentra entre dos nodos
@@ -145,11 +146,12 @@ int flag=0;
     aux->next=list->current->next;
     list->current->next->prev=aux;
     free(list->current);
-    
+    list->current=list->head;
     return (void *)valor;
   }
   
-return NULL;
+  return NULL;
+
 }
 
 void cleanList(List * list) {
