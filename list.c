@@ -130,11 +130,12 @@ const void *valor=list->current->data;
     list->tail=list->tail->prev;
     free(list->head->next);
     list->tail->next=NULL;
+    list->current=list->head->next;
     return (void *)valor;
   }
   //si el list current se encuentra entre dos nodos 
   if(list->current!=list->head && list->current!=list->tail){
-    
+
   }
 return NULL;
 }
