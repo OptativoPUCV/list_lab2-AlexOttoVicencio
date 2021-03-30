@@ -117,22 +117,8 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
- Node *aux=createNode(NULL);
-  if(list->current==list->head){
-      aux=list->head;
-      printf("aux valor %p",(void *)aux->data);
-      list->head=list->head->next;
-      free(list->head->prev);
-      list->head->prev=NULL;
-      
-      return (void *)aux->data;
-  }
-  if(list->current==list->tail){
-      aux=list->tail;
-
-      
-  }
-    return NULL;
+const void *valor=list->current->data;
+    return (void *)valor;
 }
 
 void cleanList(List * list) {
