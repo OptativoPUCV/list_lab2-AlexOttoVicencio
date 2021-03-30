@@ -148,7 +148,6 @@ int flag=0;
     list->current->next->prev=aux;
     free(list->current);
     list->current=list->head;
-    free(aux);
     return (void *)valor;
   }
   
