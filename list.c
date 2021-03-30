@@ -141,12 +141,14 @@ int flag=0;
   }
   //si el current se encuentra entre dos nodos
   if(list->current!=list->head && list->current!=list->tail &&flag==0){
+    flag=1;
     Node *aux=createNode(list->current->prev->data);
     aux=list->current->prev;
     aux->next=list->current->next;
     list->current->next->prev=aux;
     free(list->current);
     list->current=list->head;
+    free(aux);
     return (void *)valor;
   }
   
