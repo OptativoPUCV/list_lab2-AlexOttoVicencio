@@ -118,8 +118,11 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list) {
 const void *valor=list->current->data;
+int flag=0;
+
   //si el current es head
-  if(list->current==list->head){
+  if(list->current==list->head && flag==0){
+    flag=1;
     list->current=list->head->next;
     list->head=list->head->next;
     free(list->head->prev);
@@ -127,17 +130,25 @@ const void *valor=list->current->data;
     return (void *)valor;
 }
   //si el current es tail
-  if(list->current==list->tail){
+  if(list->current==list->tail && flag==0){
+    flag=1;
     list->tail=list->tail->prev;
     free(list->head->next);
     list->tail->next=NULL;
-    list->current=list->head->next;
+    
     return (void *)valor;
   }
-  //si el list current se encuentra entre dos nodos 
-  if(list->current!=list->head && list->current!=list->tail){
-      printf("por aca paso rana");
+  //si el current se encuentra entre dos nodos
+  if(list->current!=list->head && list->current!=list->tail &&flag==0){
+    Node *aux=createNode(list->current->prev->data);
+    aux=list->current->prev;
+    aux->next=list->current->next;
+    list->current->next->prev=aux;
+    free(list->current);
+    list->current=list->head;
+    return (void *)valor;
   }
+  
 return NULL;
 }
 
