@@ -122,8 +122,20 @@ const void *valor=list->current->data;
   if(list->current==list->head){
     list->head=list->head->next;
     free(list->head->prev);
+    list->head->prev=NULL;
     return (void *)valor;
 }
+  //si el current es tail
+  if(list->current==list->tail){
+    list->tail=list->tail->prev;
+    free(list->head->next);
+    list->tail->next=NULL;
+    return (void *)valor;
+  }
+  //si el list current se encuentra entre dos nodos 
+  if(list->current!=list->head && list->current!=list->tail){
+    
+  }
 return NULL;
 }
 
