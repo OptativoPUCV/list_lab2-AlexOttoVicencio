@@ -118,6 +118,7 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list) {
 const void *valor=list->current->data;
+printf("vale %p",(void*)valor);
     return (void *)valor;
 }
 
