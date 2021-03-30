@@ -145,7 +145,7 @@ int flag=0;
     aux->next=list->current->next;
     list->current->next->prev=aux;
     free(list->current);
-    list->current=list->head;
+    
     return (void *)valor;
   }
   
