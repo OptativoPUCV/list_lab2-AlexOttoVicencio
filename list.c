@@ -136,7 +136,7 @@ const void *valor=list->current->data;
   }
   //si el list current se encuentra entre dos nodos 
   if(list->current!=list->head && list->current!=list->tail){
-
+      printf("por aca paso rana");
   }
 return NULL;
 }
