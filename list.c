@@ -121,6 +121,7 @@ const void *valor=list->current->data;
   //si el current es head
   if(list->current==list->head){
     list->head=list->head->next;
+    list->head->prev->next=NULL;
     free(list->head->prev);
     list->head->prev=NULL;
     return (void *)valor;
